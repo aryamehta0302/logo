@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccuMedic 3D Logo | Luxury Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Minimalist Luxury Header -->
+    <header class="luxury-header">
+      <div class="brand-badge">
+        <span class="gold-dot"></span>
+        <span class="brand-title">AccuMedic</span>
+        <span class="brand-tag">3D Studio</span>
+      </div>
+      <div class="quick-actions">
+        <button class="glass-btn primary" id="btn-export-glb" title="Download 3D GLB Asset">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          Export GLB
+        </button>
+        <button class="glass-btn" id="btn-export-png" title="Download High-Res Transparent PNG">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+          Render PNG
+        </button>
+      </div>
+    </header>
+
+    <!-- Main 3D Viewport: Logo Only Centered & Rotating -->
+    <main class="viewport-main" id="viewport-container">
+      <div id="canvas-container"></div>
+    </main>
+
+    <!-- Floating Luxury Controls Dock -->
+    <nav class="luxury-dock">
+      <!-- Rotation Control -->
+      <div class="dock-item">
+        <button class="dock-btn active" id="btn-toggle-rotate" title="Toggle Slow Rotation">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          <span>Rotating</span>
+        </button>
+      </div>
+
+      <div class="dock-divider"></div>
+
+      <!-- Rotation Speed -->
+      <div class="dock-control">
+        <label for="rotate-speed">Speed</label>
+        <input type="range" id="rotate-speed" min="0.2" max="3.0" step="0.1" value="0.8" class="luxury-slider" />
+      </div>
+
+      <div class="dock-divider"></div>
+
+      <!-- Camera Angles -->
+      <div class="dock-item">
+        <button class="dock-btn" id="btn-view-front" title="Front Perspective">Front</button>
+        <button class="dock-btn" id="btn-view-perspective" title="Dramatic 3/4 Orbit">3/4 View</button>
+        <button class="dock-btn" id="btn-view-closeup" title="Ribbon Bevel Close-up">Bevel</button>
+      </div>
+
+      <div class="dock-divider"></div>
+
+      <!-- Light Warmth & Shine -->
+      <div class="dock-control">
+        <label for="light-warmth">Warmth</label>
+        <input type="range" id="light-warmth" min="0.2" max="1.0" step="0.05" value="0.8" class="luxury-slider" />
+      </div>
+
+      <div class="dock-control">
+        <label for="light-shine">Shine</label>
+        <input type="range" id="light-shine" min="0.5" max="3.0" step="0.1" value="1.8" class="luxury-slider" />
+      </div>
+
+      <div class="dock-divider"></div>
+
+      <!-- Sphere Glow -->
+      <div class="dock-control">
+        <label for="sphere-glow">Orb Glow</label>
+        <input type="range" id="sphere-glow" min="0.0" max="3.0" step="0.1" value="1.8" class="luxury-slider" />
+      </div>
+
+      <div class="dock-divider"></div>
+
+      <!-- Background Mode -->
+      <div class="dock-item">
+        <button class="dock-icon-btn active" id="btn-bg-studio" title="Studio Dark">
+          <span class="color-dot studio"></span>
+        </button>
+        <button class="dock-icon-btn" id="btn-bg-trans" title="Transparent Checkered">
+          <span class="color-dot trans"></span>
+        </button>
+        <button class="dock-icon-btn" id="btn-bg-white" title="Pure White">
+          <span class="color-dot white"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
